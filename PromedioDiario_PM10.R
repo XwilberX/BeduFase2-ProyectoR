@@ -60,7 +60,7 @@ data_PM1024h<-cbind(Year,Month,Day,data_PM1024h)
 
 
 ##Guardar los promedios diarios para utilizar en las gráficas
-#write.csv(data_PM1024h,"PDEstacion_PM10.csv")
+#write.csv(data_PM1024h,"~Resultados/PDEstacion_PM10.csv")
 
 #Calcular los promedios mensuales por zona
 Zona_ave<-data_PM1024h%>%group_by(Year,Month,ZONA)%>%
@@ -69,7 +69,7 @@ Zona_ave<-data_PM1024h%>%group_by(Year,Month,ZONA)%>%
 Zona_ave<-as.data.frame(Zona_ave)
 Zona_ave<-spread(Zona_ave, key = ZONA, value=Prom_mensual)
 ##Guardar los promedios mensuales para las gráficas
-#write.csv(Zona_ave, "PMZona_PM10.csv")
+#write.csv(Zona_ave, "~Resultados/PMZona_PM10.csv")
 
 
 
