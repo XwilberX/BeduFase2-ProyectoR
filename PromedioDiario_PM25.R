@@ -61,7 +61,7 @@ data_PM2524h<-cbind(Year,Month,Day,data_PM2524h)
 
 
 ##Guardar los promedios diarios
-#write.csv(data_PM2524h,"PDEstacion_PM25.csv")
+#write.csv(data_PM2524h,"~Resultados/PDEstacion_PM25.csv")
 #Calcular los promedios mensuales por zona
 Zona_ave25<-data_PM2524h%>%group_by(Year,Month,ZONA)%>%
   summarise(Prom_mensual=round(mean(PromDiario),1))
@@ -70,4 +70,4 @@ Zona_ave25<-as.data.frame(Zona_ave25)
 
 Zona_ave25<-spread(Zona_ave25, key = ZONA, value=Prom_mensual)
 ##Guardar los promedios mensuales
-#write.csv(Zona_ave25, "PMZona_PM25.csv")
+#write.csv(Zona_ave25, "~Resultados/PMZona_PM25.csv")
