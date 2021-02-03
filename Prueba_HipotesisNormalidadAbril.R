@@ -1,9 +1,9 @@
-##Pruebas de hipótesis para los valores de las 5 estaciones en el mes de 
+##Pruebas de hipÃ³tesis para los valores de las 5 estaciones en el mes de 
 ##abril de 2019 y 2020 de PM10
 
 
 #Cargar los datos diarios
-PM10<-read.csv("C:/Users/jtoba/Documents/BEDU/Proyecto/PDEstacion_PM10.csv", header=T)
+PM10<-read.csv("PDEstacion_PM10.csv", header=T)
 PM10<-PM10[-1]
 
 #Filtrar los datos de abril de 2019
@@ -26,11 +26,11 @@ for (i in unique(PM10$ZONA)){
   print(st20$p.value>=0.05)
 }
 
-#Se realiza la prueba de hipótesis en cada zona, considerando la varianza distinta
-#Sólo se toman en cuenta las que superaron la prueba de normalidad en ambos años
+#Se realiza la prueba de hipÃ³tesis en cada zona, considerando la varianza distinta
+#SÃ³lo se toman en cuenta las que superaron la prueba de normalidad en ambos aÃ±os
 Zonas_PH<-c("NE", "NO","CE")
 
-Hipotesis<-c() #Se acepta la hipótesis alternativa 2020<2019? True se acepta False se rechaza
+Hipotesis<-c() #Se acepta la hipÃ³tesis alternativa 2020<2019? True se acepta False se rechaza
 for(i in Zonas_PH){
   a<-t.test(PM100420[PM100420$ZONA==i,]$PromDiario ,PM100419[PM100419$ZONA==i,]$PromDiario,
             alternative = "less",
@@ -41,12 +41,12 @@ for(i in Zonas_PH){
 
 
 Hipotesis_04<-Hipotesis
-#En todas las zonas estudiadas se muestra una diferencia significativa entre a�os para este mes
+#En todas las zonas estudiadas se muestra una diferencia significativa entre años para este mes
 
 
 ###Para los datos de PM25#####
 #Cargar los datos diarios
-PM25<-read.csv("C:/Users/jtoba/Documents/BEDU/Proyecto/PDEstacion_PM25.csv", header=T)
+PM25<-read.csv("PDEstacion_PM25.csv", header=T)
 PM25<-PM25[-1]
 
 #Filtrar los datos de abril de 2019
@@ -69,13 +69,13 @@ for (i in unique(PM25$ZONA)){
   print(st20$p.value>=0.05)
 }
 
-#Se realiza la prueba de hipótesis en cada zona, considerando la varianza distinta
+#Se realiza la prueba de hipÃ³tesis en cada zona, considerando la varianza distinta
 
-#solamente se utilizan las zonas que mostraron normalidad en ambos años
+#solamente se utilizan las zonas que mostraron normalidad en ambos aÃ±os
 Zonas_PH25<-c("CE","NO","NE","SE")
 #Se agrupan los datos por zona y se determinan los valores para las pruebas
 
-Hipotesis<-c() #Se rechaza la hipótesis nula 2020<2019? True se rechaza False se acepta de que
+Hipotesis<-c() #Se rechaza la hipÃ³tesis nula 2020<2019? True se rechaza False se acepta de que
 for(i in Zonas_PH25){
   a<-t.test(PM250420[PM250420$ZONA==i,]$PromDiario ,PM250419[PM250419$ZONA==i,]$PromDiario,
             alternative = "less",
@@ -87,4 +87,4 @@ for(i in Zonas_PH25){
 
 
 Hipotesis_PM25<-Hipotesis
-#En todas las zonas estudiadas se muestra una diferencia significativa entre a�os para este mes
+#En todas las zonas estudiadas se muestra una diferencia significativa entre años para este mes
