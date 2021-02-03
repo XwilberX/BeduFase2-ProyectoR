@@ -3,7 +3,7 @@
 
 
 #Cargar los datos diarios
-PM10<-read.csv("PDEstacion_PM10.csv", header=T)
+PM10<-read.csv("~Resultados/PDEstacion_PM10.csv", header=T)
 PM10<-PM10[-1]
 
 #Filtrar los datos de abril de 2019
@@ -46,7 +46,7 @@ Hipotesis_04<-Hipotesis
 
 ###Para los datos de PM25#####
 #Cargar los datos diarios
-PM25<-read.csv("PDEstacion_PM25.csv", header=T)
+PM25<-read.csv("~Resultados/PDEstacion_PM25.csv", header=T)
 PM25<-PM25[-1]
 
 #Filtrar los datos de abril de 2019
