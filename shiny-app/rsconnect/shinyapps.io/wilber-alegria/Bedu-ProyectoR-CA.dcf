@@ -1,0 +1,13 @@
+name: Bedu-ProyectoR-CA
+title: Bedu-ProyectoR-CA
+username:
+account: wilber-alegria
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3587616
+bundleId: 4184293
+url: https://wilber-alegria.shinyapps.io/Bedu-ProyectoR-CA/
+when: 1612519972.96804
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Graficasparte2.R|ProyectoGraficas.R|shiny.r
